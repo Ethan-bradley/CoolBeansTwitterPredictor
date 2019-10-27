@@ -2,7 +2,7 @@ import tensorflow as tf
 import pandas as pd
 import numpy as np
 import sys
-sys.path.append("app/hello/")
+sys.path.append("/app/hello/model3.h5")
 
 model = tf.keras.models.load_model('model3.h5')
 
