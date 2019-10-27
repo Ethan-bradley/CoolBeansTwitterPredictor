@@ -1,0 +1,212 @@
+<!-- {% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %} -->
+
+
+
+<!-- Bash
+git status
+git add index.html
+git commit -m "htmlpage"
+git push heroku master
+heroku master -->
+<html>
+    <head>
+        <title>Cal Hacks Team Cool Beans Project</title>
+    </head>
+
+    <body>
+        <div class = "intro">
+            <h1 style="font-size:80px; text-align: center;">Twitter API Tweet Predictor</h1>
+            <div class = "images">
+                <img src = "https://calhacks.io/assets/logo-color.png" style = "margin-left: -2vw" title = "Cal Hacks Logo" width = 300vw >
+                <img src = "https://i.pinimg.com/originals/c5/1c/da/c51cda89a29626ea7b655bd7f703218c.png" width = 100vw height = 100vh title = "X Connector" style = "margin-bottom: 12vh; margin-left: 2vw; padding-left:6vw; padding-right:6vw;">
+                <img src = "data:image/png;base64,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" title = "Twitter Logo" style = "margin-bottom: 5vh; margin-left: 5vw">
+            </div>
+
+            <br>
+            <p class="background">Ciao! This is Team Cool Bean's first time at Cal Hacks. Members include: Anthony Ebiner, Ethan Bradley, Evan Gao, and Justin Chen. We are so happy to share
+                                our wonderful project with you! Our project utilizes the Twitter API to calculate how many tweets a user sends on average per week. We wanted to
+                                estimate how many tweets a user may make in a given week. The idea stemmed from this bidding post in
+                                <a href="https://www.predictit.org/markets/search?query=tweets">Predit.it</a>.
+                                With President's Trump's tweets as an example, we calculated how many tweets he sends per day in the past and compiled this data into a large list.
+                               After averaging this data, we can then estimate how many future tweets per a week he may make. </p>
+
+            <hr>
+
+            <div class = "stats">
+                <h1 style="font-size:80px; text-align: center;">ENTER IN INFORMATION</h1>
+                <table>
+                    <tr>
+                        <th>Something</th>
+                        <th>Something 2</th>
+                        <th>Something 3</th>
+                    </tr>
+                    <tr>
+                        <td>Fact</td>
+                        <td>Fact 2</td>
+                        <td>Fact 3</td>
+                    </tr>
+                    <tr>
+                        <td>Fact 4</td>
+                        <td>Fact 5</td>
+                        <td>Fact 6</td>
+                    </tr>
+                </table>
+                <br>
+            </div>
+
+
+    <div class = "python">
+        <form action ="/search/" method ="post" title="Submit a form with your information">
+            {%csrf_token %}
+            <legend>Text input</legend>
+            <p>
+          <label>Text box</label>
+          <input type = "text"
+                 name = "search"
+                 value = "Search here" />
+             </p>
+            {{form}}
+            <input type = "submit" value= "Submit">
+        </form>
+        <p> Post Data: {{ info }}</p>
+        <p> Result: {{ output }} </p>
+    <div>
+
+          <div class = "python">
+        <form action ="/Donald/" method ="post" title="Submit a form with your information">
+            {%csrf_token %}
+            {{form}}
+            <input type = "submit" value= "Submit">
+        </form>
+
+        <p> Result: {{ output2 }} </p>
+    <div>
+
+
+<br>
+            <hr>
+
+            <div class = "members">
+                    <div class="row">
+                            <div class="column">
+                                <img src = "anthony.jpg" width = 250vw height = 250vh style = "border-radius: 100%">
+                                <h2>Anthony Ebiner</h2>
+                            </div>
+
+                            <div class="column">
+                                <img src = "ethan.jpg" width = 250vw height = 250vh style = "border-radius: 100%">
+                                <h2>Ethan Bradley</h2>
+                            </div>
+
+                            <div class="column">
+                                <img src = "evan.jpg" width = 250vw height = 250vh style = "border-radius: 100%">
+                                <h2>Evan Gao</h2>
+                            </div>
+
+                            <div class="column">
+                                <img src = "justin.jpg" width = 250vw height = 250vh style = "border-radius: 100%">
+                                <h2>Justin Chen</h2>
+                            </div>
+                    </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <footer style="font-size: 20px;"><i>@Cool-Beans Cal Hacks 2019<i></footer>
+        </div>
+
+
+    </body>
+
+
+
+    <style>
+        body{
+            background-image: url("https://live.staticflickr.com/3654/3523153613_6263c7a8dd_b.jpg");
+            background-size: auto;
+            /* background-color: #d2b48c; */
+            display: inline;
+        }
+
+        .images{
+            text-align: center;
+        }
+
+        p{
+            font-size: 20px;
+        }
+
+        hr{
+            border: 1px solid black;
+        }
+
+        .intro{
+            background-color: white;
+            border-radius: 5%;
+            opacity: .95;
+            margin: 5vh;
+            /* margin-left: 10vw;
+            margin-right: 10vw; */
+            padding-left: 5vw;
+            padding-right: 5vw;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid lightgray;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .members{
+            margin-left: -2vw;
+        }
+
+
+        .column {
+            float: left;
+            width: 10vw;  /* 18% */
+            /* padding: 5vw; */
+            margin: 5vw;
+            height: 25vh;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .members .row .column{
+            border-radius: 10%;
+        }
+
+        .member .row h2.column{
+            margin-left: 2vw;
+        }
+
+    </style>
+
+    <script>
+
+    </script>
+
+</html>
+
+<!-- {% endblock %} -->
+
