@@ -1,6 +1,1 @@
-amazon:
-  service: S3
-  access_key_id: "AKIA6C3XUVZIPZEIKIBA"
-  secret_access_key: "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"
-  region: "US West"
-  bucket: "coolbeanstwitterprediction"
+
